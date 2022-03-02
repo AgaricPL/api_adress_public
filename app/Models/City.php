@@ -1,7 +1,8 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,9 +12,13 @@ class City extends Model
 
     protected $table="city";
 
-    public function getCity()
+    public function getCity(string $name)
     {
+        return City::where('name', 'like', '%'. $name. '%');
+    }
 
-        # code...
+    public function getFirstCity(): self
+    {
+        return City::all()->first();
     }
 }

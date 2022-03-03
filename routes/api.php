@@ -15,23 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
-
-
 Route::post('/tokens/create', function (Request $request) {
     $token = $request->user()->createToken($request->token_name);
     return ['token' => $token->plainTextToken];
 });
 
-// protected routes
-// Route::middleware('auth:sanctum')->post('/getCity', [CityController::class, 'getCity'])->name('getCity');
+Route::get('/getFirstCity', [CityController::class, 'getFirstCity'])->name('getFirstCity');
 
+// protected routes
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::match(['get', 'post'], '/getCity', [CityController::class, 'getCity'])->name('getCity');
 });
 
-
-
-Route::middleware('auth:sanctum')->get('/getCity', [CityController::class, 'getCity']);

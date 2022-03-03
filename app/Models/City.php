@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -17,8 +16,8 @@ class City extends Model
         return City::where('name', 'like', '%'. $name. '%');
     }
 
-    public function getFirstCity(): self
+    public function getFirstCity()
     {
-        return City::all()->first();
+        return City::take(1)->first();
     }
 }

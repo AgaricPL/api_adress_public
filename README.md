@@ -71,5 +71,8 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 2. sail up
 3. sail php artisan migrate
 4. sail php artisan db:seed
-5. Register user and copy token to make request!
-6. sail php artisan test
+5. exp url http://localhost/api/getFirstCity
+7. Register user and copy token to make request!
+8. copy token as "Bearer token" Auth and make request to http://localhost/api/getCity
+9. add name with some value to make request 
+10. sail php artisan test

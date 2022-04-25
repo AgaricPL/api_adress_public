@@ -13,7 +13,7 @@ class City extends Model
 
     public function getCity(string $name)
     {
-        return City::where('name', 'like', '%'. $name. '%');
+        return City::where('name', 'like', '%'. $name. '%')->limit(10);
     }
 
     public function getFirstCity()

@@ -69,8 +69,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 ## To run :
 1. docker!
 2. sail up
-3. sail php artisan migrate
-4. sail php artisan db:seed
+3. sail php artisan migrate --seed
 5. exp url http://localhost/api/getFirstCity
 7. Register user and copy token to make request!
 8. copy token as "Bearer token" Auth and make request to http://localhost/api/getCity

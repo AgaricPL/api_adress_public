@@ -39,7 +39,7 @@ return [
             'driver' => 'sqlite',
             'url' => env('DATABASE_URL'),
             'database' => env('DB_DATABASE', database_path('database.sqlite')),
-            'prefix' => '',
+            'prefix' => env('DB_PREFIX', ''),
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],
 
@@ -55,7 +55,7 @@ return [
             'charset' => 'utf8mb4',
             // 'collation' => 'utf8mb4_unicode_ci',
             'collation' => 'utf8mb4_unicode_520_ci',
-            'prefix' => '',
+            'prefix' => env('DB_PREFIX', ''),
             'prefix_indexes' => true,
             'strict' => true,
             'engine' => null,
